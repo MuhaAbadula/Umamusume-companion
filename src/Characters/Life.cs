@@ -254,7 +254,56 @@ namespace UmamusumeCompanion
             public Quaternion Deform() { return T.rotation * Quaternion.Inverse(Rest); }
         }
 
-        Bone chest, neck, head, eyeL, eyeR;
+        Bone chest, neck, head;
+        Eye eyeL, eyeR;
+
+        class Eye
+        {
+            public Transform T;
+            Quaternion restLocal;
+            Vector3 restPosition, right, up;
+            bool slides;
+
+            public static Eye Bind(Bone bone, string side, List<CharPack.Shape> shapes)
+            {
+                if (bone == null) return null;
+                var eye = new Eye { T = bone.T, restLocal = bone.RestLocal, restPosition = bone.T.localPosition };
+                if (shapes == null) return eye;
+                // Pack deltas are in bind space. The eye position is relative to its parent.
+                Quaternion toParent = bone.RestLocal * Quaternion.Inverse(bone.Rest);
+                foreach (var shape in shapes)
+                {
+                    if (!shape.Name.StartsWith("Eye_")) continue;
+                    bool horizontal = shape.Name.Contains("_" + side + "(XRange)[");
+                    if (!horizontal && !shape.Name.Contains("_" + side + "(YRange)[")) continue;
+                    // These shapes translate the entire iris patch by a single vector.
+                    foreach (var d in shape.Delta)
+                    {
+                        if (d.sqrMagnitude == 0f) continue;
+                        if (horizontal) eye.right = toParent * (d * Mathf.Sign(d.x));
+                        else eye.up = toParent * (d * Mathf.Sign(d.y));
+                        break;
+                    }
+                }
+                eye.slides = eye.right != Vector3.zero || eye.up != Vector3.zero;
+                return eye;
+            }
+
+            public void Reset()
+            {
+                T.localRotation = restLocal;
+                if (slides) T.localPosition = restPosition;
+            }
+
+            public void Aim(Vector2 slide, Quaternion rotation)
+            {
+                Reset();
+                if (slides)
+                    T.localPosition += right * slide.x + up * slide.y;
+                else
+                    T.rotation = rotation * T.rotation; // rigs with conventional rotating eyeballs
+            }
+        }
 
         /// <summary>Upper arm, forearm, hand: posed with two-bone IK (reaching for the radio/crank, elbow on the door).</summary>
         class Arm { public Transform Upper, Fore, Hand; }
@@ -271,7 +320,10 @@ namespace UmamusumeCompanion
         readonly Animator anim;
 
         public Life(Transform uncle, Mesh mesh, string faceFile, Dictionary<string, Transform> bones,
-            Dictionary<string, Quaternion> rests)
+            Dictionary<string, Quaternion> rests) : this(uncle, mesh, faceFile, bones, rests, null) { }
+
+        public Life(Transform uncle, Mesh mesh, string faceFile, Dictionary<string, Transform> bones,
+            Dictionary<string, Quaternion> rests, List<CharPack.Shape> shapes)
         {
             this.uncle = uncle;
             logic = uncle.GetComponent<UncleLogicC>();
@@ -280,8 +332,8 @@ namespace UmamusumeCompanion
             chest = Find(bones, rests, "Chest", "Spine2", "UpperChest");
             neck = Find(bones, rests, "Neck");
             head = Find(bones, rests, "Head");
-            eyeL = Find(bones, rests, "Eye_L", "LeftEye", "Eye.L");
-            eyeR = Find(bones, rests, "Eye_R", "RightEye", "Eye.R");
+            eyeL = Eye.Bind(Find(bones, rests, "Eye_L", "LeftEye", "Eye.L"), "L", shapes);
+            eyeR = Eye.Bind(Find(bones, rests, "Eye_R", "RightEye", "Eye.R"), "R", shapes);
             armL = FindArm(bones, "Arm_L", "Elbow_L", "Wrist_L") ?? FindArm(bones, "LeftArm", "LeftForeArm", "LeftHand");
             armR = FindArm(bones, "Arm_R", "Elbow_R", "Wrist_R") ?? FindArm(bones, "RightArm", "RightForeArm", "RightHand");
             Summary = Face.Count + " expressions" + (eyeL != null ? ", eye bones" : "") + (head != null ? ", head look" : "");
@@ -341,8 +393,9 @@ namespace UmamusumeCompanion
             if (Say == null) return false;
             float now = Time.time, until;
             if (sayCool.TryGetValue(key, out until) && now < until) return false;
-            if (Random.value > chance) return false;
+            if (Random.value > chance * TrustTalkK) return false;
             sayCool[key] = now + cooldown;
+            key = NaritaKey(key);
             Debug.Log("[Umamusume companion] remark: " + key);
             Say(key);
             return true;
@@ -668,6 +721,7 @@ namespace UmamusumeCompanion
             Face.BeginFrame();
             if (!Enabled)
             {
+                CancelFruit();
                 if (Doze.Phase != DozePhase.Awake) { Doze.Phase = DozePhase.Awake; LidsTarget = 0f; dozeG = false; }
                 curLookW = 0f;
                 TailAmp = TailLift = 0f;
@@ -780,7 +834,8 @@ namespace UmamusumeCompanion
             {
                 if (beat != null) { beat = null; nextBeat = now + Random.Range(3f, 8f) / Mathf.Max(0.2f, Activity); }
                 watch = null;
-                if (GestureWeight > 0f && !GestureForced && StopGesture != null) StopGesture();
+                bool keepConsole = NaritaHere && NPlaying && inCar && talking && !asleep && !reacting;
+                if (!keepConsole && GestureWeight > 0f && !GestureForced && StopGesture != null) StopGesture();
                 if (inCar && asleep) { tiltTarget = 22f; chestTiltTarget = 6f; } // asleep in the car: slumped towards the window
                 if (inCar && talking) { curLook = Look.Player; curLookW = 0f; }  // the game turns the head; eyes go to the player
                 if (inCar && reacting) { curLook = Look.Road; curLookW = 0.8f; }
@@ -796,6 +851,7 @@ namespace UmamusumeCompanion
             CheckPending(now);
             DriverEvents(now, inCar, slp);
             Extras(dt, now, inCar, slp, talking, reacting);
+            NaritaStep(dt, now, inCar, slp, talking, reacting);
             PrankStep(dt, now, inCar, slp, talking, reacting);
             SouvenirStep(now, inCar, slp, talking, reacting);   // task 47
             BootLayer(now);
@@ -1525,21 +1581,18 @@ namespace UmamusumeCompanion
                 eyeTarget = lookAtPlayerOutside && cam != null ? cam.transform.position : headPos + Hd * Vector3.forward * 4f + saccade * 0.5f;
             }
             float ey, ep;
-            YawPitch(head, eyeTarget, 15f, 8f, out ey, out ep);
-            // closed (smiling, sleeping) eyes don't turn: the pupils poked through the lids while she looked at him
-            float open = 1f - Mathf.Max(Face.EyeCovered, LidsShut);
-            ey *= open; ep *= open;
+            const float maxYaw = 15f, maxPitch = 8f;
+            YawPitch(head, eyeTarget, maxYaw, maxPitch, out ey, out ep);
             float k = 1f - Mathf.Exp(-dt / 0.04f);
             eyeYaw = Mathf.Lerp(eyeYaw, ey, k);
             eyePitch = Mathf.Lerp(eyePitch, ep, k);
+            // Apply lid coverage after smoothing so the iris is centred on the actual closed frame.
+            float open = 1f - Mathf.Clamp01(Mathf.Max(Face.EyeCovered, LidsShut));
+            Vector2 slide = Vector2.ClampMagnitude(new Vector2(eyeYaw / maxYaw, -eyePitch / maxPitch), 1f) * (0.45f * open);
             Quaternion He = head.Deform();
-            Quaternion r = Quaternion.AngleAxis(eyeYaw, He * Vector3.up) * Quaternion.AngleAxis(eyePitch, He * Vector3.right);
-            foreach (var e in new[] { eyeL, eyeR })
-            {
-                if (e == null) continue;
-                e.T.localRotation = e.RestLocal;
-                e.T.rotation = r * e.T.rotation;
-            }
+            Quaternion r = Quaternion.AngleAxis(eyeYaw * open, He * Vector3.up) * Quaternion.AngleAxis(eyePitch * open, He * Vector3.right);
+            if (eyeL != null) eyeL.Aim(slide, r);
+            if (eyeR != null) eyeR.Aim(slide, r);
         }
 
         /// <summary>
@@ -1548,8 +1601,9 @@ namespace UmamusumeCompanion
         /// </summary>
         public void ResetBones()
         {
-            foreach (var b in new[] { chest, neck, head, eyeL, eyeR })
+            foreach (var b in new[] { chest, neck, head })
                 if (b != null) b.T.localRotation = b.RestLocal;
+            ResetEyes();
             DozeResetBones();
         }
 
@@ -1568,8 +1622,8 @@ namespace UmamusumeCompanion
 
         void ResetEyes()
         {
-            if (eyeL != null) eyeL.T.localRotation = eyeL.RestLocal;
-            if (eyeR != null) eyeR.T.localRotation = eyeR.RestLocal;
+            if (eyeL != null) eyeL.Reset();
+            if (eyeR != null) eyeR.Reset();
         }
 
         /// <summary>Yaw/pitch (degrees, clamped) that turn the bone's forward towards the point.</summary>

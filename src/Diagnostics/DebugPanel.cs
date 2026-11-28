@@ -186,6 +186,11 @@ namespace UmamusumeCompanion
             GUILayout.Label(status2);
             if (!string.IsNullOrEmpty(result)) GUILayout.Label("> " + result);
             scroll = GUILayout.BeginScrollView(scroll);
+            if (Trust.Here)
+            {
+                GUILayout.Label(Trust.Status);
+                Row(B("Trust -1", () => Trust.DebugStep(-1), false), B("Trust +1", () => Trust.DebugStep(1), false));
+            }
 
             if (CharFeatures.Has("boot_snack"))
             {

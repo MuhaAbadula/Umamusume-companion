@@ -53,6 +53,17 @@ namespace UmamusumeCompanion
         public static bool SawOut;
         public static bool Forced;              // debug: no speed / boarding rule
 
+        public static void SelectPack(string pack)
+        {
+            if (Pack == pack) return;
+            Pack = pack;
+            pendingMask = 0;
+            Forced = NeedBoard = SawOut = false;
+            loaded = false;
+            Row.DestroyItems();
+            if (Row.Live != null) Row.Live.CaughtUp = false;
+        }
+
         static string StatePath
         {
             get { return Path.Combine(CompanionStorage.SaveDirectory, "souvenirs.txt"); }
@@ -211,7 +222,7 @@ namespace UmamusumeCompanion
             Log(Pack + " - - reset (" + why + ", every pack)");
         }
 
-        static void NewGame() { try { Reset("new game"); } catch (Exception e) { Debug.LogWarning("[Umamusume companion] Souvenir: reset failed: " + e.Message); } }
+        static void NewGame() { try { Trust.Reset("new game"); Reset("new game"); } catch (Exception e) { Debug.LogWarning("[Umamusume companion] Souvenir: reset failed: " + e.Message); } }
         static void ReturnHome() { try { Reset("return home"); } catch (Exception e) { Debug.LogWarning("[Umamusume companion] Souvenir: reset failed: " + e.Message); } }
 
         static void ShopEnter(ShopC __instance)

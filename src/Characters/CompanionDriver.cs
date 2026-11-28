@@ -629,6 +629,7 @@ namespace UmamusumeCompanion
                 mats[s] = m;
             }
 
+            irisMaterial = EyeSurface.Apply(d, mesh, ref mats);
             girlSmr = girlRoot.gameObject.AddComponent<SkinnedMeshRenderer>();
             if (CharFeatures.Has("boot_snack")) fullBellyShape = mesh.GetBlendShapeIndex("Oguri_Full");
             girlSmr.sharedMesh = mesh;
@@ -712,7 +713,7 @@ namespace UmamusumeCompanion
             for (int i = 0; i < nb; i++) rests[d.Bones[i].Name] = Rot(d.Bones[i].Rest);
             restRot = rests;
             boneByName = tByName;
-            life = new Life(transform, mesh, Path.Combine(assetsDir, "face.txt"), tByName, rests);
+            life = new Life(transform, mesh, Path.Combine(assetsDir, "face.txt"), tByName, rests, d.Shapes);
             if (hipLink != null)
                 gestures = new Gestures(Path.Combine(assetsDir, "anims"), hipLink.Girl, rests[hipLink.Girl.name], tByName, rests) { Up = transform };
             remarks = new Remarks(assetsDir);
@@ -755,6 +756,9 @@ namespace UmamusumeCompanion
             }
             if (gestures != null && gestures.Count > 0)
             {
+                life.Gest = gestures;
+                Transform wrist;
+                if (tByName.TryGetValue("Wrist_R", out wrist)) life.SetupConsole(wrist, tByName, girlRoot, girlSmr, Path.Combine(assetsDir, "props"), d.Scale);
                 life.GestureNames = new List<string>(gestures.Names).ToArray();
                 life.PlayGesture = n => gestures.Play(n) ? gestures.LengthOf(n) : 0f;
                 life.StopGesture = gestures.Stop;
@@ -781,6 +785,11 @@ namespace UmamusumeCompanion
                     + (life.Face.SwapBlink != null ? ", blink " + life.Face.SwapBlink : ", NO blink line") + ", talk " + life.Face.SwapTalk.Length : "");
             SetUncleVisible(!hideUncle);
             Camera.onPreCull += OnAnyPreCull;
+            if (irisMaterial != null)
+            {
+                Camera.onPreRender += BeforeEyeRender;
+                Camera.onPostRender += AfterEyeRender;
+            }
             StartCoroutine(RestoreHandsLoop());
         }
 
@@ -808,6 +817,8 @@ namespace UmamusumeCompanion
         {
             EndFetch();
             Camera.onPreCull -= OnAnyPreCull;
+            Camera.onPreRender -= BeforeEyeRender;
+            Camera.onPostRender -= AfterEyeRender;
             if (Life.Current == life) Life.Current = null;
             if (backpack != null) backpack.Destroy();
             Props.Clear();
@@ -903,6 +914,25 @@ namespace UmamusumeCompanion
                 VoiceSummary = "uncle's voice x" + pitch;
             }
             else VoiceSummary = "uncle's voice (could not pitch)";
+        }
+
+        Material irisMaterial;
+        readonly Stack<bool> eyeCameraStencil = new Stack<bool>();
+
+        void BeforeEyeRender(Camera cam)
+        {
+            bool stencil = cam.targetTexture == null || cam.targetTexture.depth >= 24;
+            if (stencil != (eyeCameraStencil.Count == 0 || eyeCameraStencil.Peek()))
+                EyeSurface.SetStencil(irisMaterial, stencil);
+            eyeCameraStencil.Push(stencil);
+        }
+
+        void AfterEyeRender(Camera cam)
+        {
+            if (eyeCameraStencil.Count == 0) return;
+            bool before = eyeCameraStencil.Pop();
+            bool after = eyeCameraStencil.Count == 0 || eyeCameraStencil.Peek();
+            if (before != after) EyeSurface.SetStencil(irisMaterial, after);
         }
 
         void OnAnyPreCull(Camera cam)
@@ -1013,6 +1043,7 @@ namespace UmamusumeCompanion
                 }
             }
             if (life != null) life.PoseBones(Time.deltaTime);
+            if (life != null && life.OfferingFruit) life.PoseFruit(Time.time);
             if (snackStarted >= 0f) life.PoseSnack(Time.time - snackStarted, snackProp);
             PoseCrateHands();
             PoseExpHands();   // task 87
@@ -1055,6 +1086,7 @@ namespace UmamusumeCompanion
                     hp.UncleHand.position += hp.Knuckle.position - hp.UncleKnuckle.position;
                 hp.Pulled = true;
             }
+            if (life != null) life.ConsoleLate();
             ProbeTwitch();
         }
 

@@ -9,6 +9,11 @@ namespace UmamusumeCompanion
 {
     internal sealed class CompanionPicker : MonoBehaviour
     {
+        const int RosterColumns = 2;
+        const int VisibleRows = 3;
+        const int RowStride = 104;
+        const int RosterWidth = 928;
+
         static readonly Color Backdrop = new Color32(25, 31, 29, 255);
         static readonly Color Card = new Color32(45, 55, 50, 255);
         static readonly Color SelectedCard = new Color32(75, 86, 67, 255);
@@ -142,12 +147,14 @@ namespace UmamusumeCompanion
                 ? GameText.Choose("Your choice applies when you start or continue a trip.",
                     "Спутница присоединится, когда вы начнёте или продолжите поездку.")
                 : GameText.Choose("No companion packs installed.", "Спутницы не установлены.");
-            Label(Place("Help", page, Vector2.zero, new Vector2(0, 402), new Vector2(928, 37)), help, 21, MutedInk);
+            bool scrollable = mod.ModelCount > RosterColumns * VisibleRows;
+            Label(Place("Help", page, Vector2.zero, new Vector2(0, 402), new Vector2(RosterWidth, 37)),
+                help, 21, MutedInk);
 
             candidate = mod.ModelCount > 0 ? mod.SelectedModel : -1;
             choices = new Button[mod.ModelCount];
             selectionMarks = new Image[choices.Length];
-            if (choices.Length > 0) BuildRoster(page);
+            if (choices.Length > 0) BuildRoster(page, scrollable);
 
             status = Label(Place("Status", page, Vector2.zero, new Vector2(0, 0), new Vector2(460, 58)), "", 18, Accent);
             Button close = null;
@@ -168,22 +175,31 @@ namespace UmamusumeCompanion
             else if (close != null) close.Select();
         }
 
-        void BuildRoster(RectTransform page)
+        void BuildRoster(RectTransform page, bool scrollable)
         {
-            const int columns = 2;
-            const int stride = 104;
-            var viewport = Place("Roster", page, Vector2.zero, new Vector2(0, 76), new Vector2(928, 312));
+            const int gap = 16;
+            const int scrollbarWidth = 24;
+            const int rosterHeight = VisibleRows * RowStride;
+            float viewportWidth = scrollable ? RosterWidth - gap - scrollbarWidth : RosterWidth;
+            float cardWidth = (viewportWidth - gap) / RosterColumns;
+            var roster = Place("Roster", page, Vector2.zero, new Vector2(0, 76), new Vector2(RosterWidth, rosterHeight));
+            var viewport = Place("Viewport", roster, Vector2.zero, Vector2.zero, new Vector2(viewportWidth, rosterHeight));
+            viewport.gameObject.AddComponent<Image>().color = Color.clear;
             viewport.gameObject.AddComponent<RectMask2D>();
-            var scroll = viewport.gameObject.AddComponent<ScrollRect>();
-            int rows = (choices.Length + columns - 1) / columns;
-            float contentHeight = rows * stride;
-            var content = Place("Packs", viewport, new Vector2(0, 1), new Vector2(0, -contentHeight), new Vector2(928, contentHeight));
+            var scroll = roster.gameObject.AddComponent<ScrollRect>();
+            int rows = (choices.Length + RosterColumns - 1) / RosterColumns;
+            float contentHeight = rows * RowStride;
+            var content = Place("Packs", viewport, new Vector2(0, 1),
+                new Vector2(0, -contentHeight), new Vector2(viewportWidth, contentHeight));
             scroll.viewport = viewport;
             scroll.content = content;
             scroll.horizontal = false;
-            scroll.vertical = rows > 3;
+            scroll.vertical = scrollable;
             scroll.movementType = ScrollRect.MovementType.Clamped;
             scroll.scrollSensitivity = 38;
+            if (scrollable)
+                scroll.verticalScrollbar = MakeScrollbar(roster, new Vector2(viewportWidth + gap, 0),
+                    new Vector2(scrollbarWidth, rosterHeight));
 
             for (int i = 0; i < choices.Length; i++)
             {
@@ -192,14 +208,15 @@ namespace UmamusumeCompanion
                 string englishName = info.Get("name_en", mod.ModelId(i));
                 string name = GameText.Russian ? info.Get("name", englishName) : englishName;
                 var card = MakeButton(content, "Pack " + mod.ModelId(i), new Vector2(0, 1),
-                    new Vector2((i % columns) * 472, -(i / columns) * stride - 91), new Vector2(456, 91),
+                    new Vector2((i % RosterColumns) * (cardWidth + gap), -(i / RosterColumns) * RowStride - 91),
+                    new Vector2(cardWidth, 91),
                     name, () => Select(index));
                 var title = card.GetComponentInChildren<Text>();
                 title.alignment = TextAnchor.MiddleLeft;
                 title.fontSize = 25;
                 title.rectTransform.offsetMin = new Vector2(23, 39);
                 title.rectTransform.offsetMax = new Vector2(-22, -10);
-                Label(Place("Feature", card.transform, Vector2.zero, new Vector2(23, 9), new Vector2(410, 29)),
+                Label(Place("Feature", card.transform, Vector2.zero, new Vector2(23, 9), new Vector2(cardWidth - 46, 29)),
                     PackFeature(info), 17, MutedInk);
                 var mark = Place("Selection", card.transform, Vector2.zero, Vector2.zero, new Vector2(5, 91)).gameObject.AddComponent<Image>();
                 mark.color = Accent;
@@ -207,6 +224,32 @@ namespace UmamusumeCompanion
                 selectionMarks[i] = mark;
                 choices[i] = card;
             }
+
+            if (scrollable)
+            {
+                int firstRow = Mathf.Max(0, candidate / RosterColumns - VisibleRows + 1);
+                Canvas.ForceUpdateCanvases();
+                scroll.verticalNormalizedPosition = 1f - firstRow / (float)(rows - VisibleRows);
+            }
+        }
+
+        static Scrollbar MakeScrollbar(Transform parent, Vector2 position, Vector2 size)
+        {
+            var track = Place("Companion Scrollbar", parent, Vector2.zero, position, size);
+            track.gameObject.AddComponent<Image>().color = Card;
+            var slidingArea = Rect("Sliding Area", track, Vector2.zero, Vector2.one);
+            slidingArea.offsetMin = new Vector2(4, 4);
+            slidingArea.offsetMax = new Vector2(-4, -4);
+            var handle = Rect("Handle", slidingArea, Vector2.zero, Vector2.one);
+            var thumb = handle.gameObject.AddComponent<Image>();
+            thumb.color = Accent;
+
+            var scrollbar = track.gameObject.AddComponent<Scrollbar>();
+            scrollbar.direction = Scrollbar.Direction.BottomToTop;
+            scrollbar.handleRect = handle;
+            scrollbar.targetGraphic = thumb;
+            scrollbar.navigation = new Navigation { mode = Navigation.Mode.None };
+            return scrollbar;
         }
 
         static string PackFeature(CharInfo info)

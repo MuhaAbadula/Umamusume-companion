@@ -318,9 +318,48 @@ namespace UmamusumeCompanion
         {
             Clip c;
             if (name == null || !clips.TryGetValue(name, out c)) return false;
+            StartXFade();
             cur = c;
             t = 0f;
+            LoopClip = ThenFrom = null;
+            Speed = 1f;
             return true;
+        }
+
+        // ---- task 79 (Narita): a held clip. LoopClip loops between frames LoopA..LoopB until Stop; ThenFrom, once it
+        // reaches frame ThenAt, jumps to ThenClip at ThenFrame (look_up back to play_sit). Speed scales the clip time.
+        public string LoopClip, ThenFrom, ThenClip;
+        public float LoopA, LoopB, ThenAt, ThenFrame, Speed = 1f;
+        public string CurName { get { return cur != null ? cur.Name : null; } }
+        public float CurFrame { get { return cur != null ? t * cur.Fps : -1f; } }
+
+        /// <summary>Jump to another clip at a frame, keeping the weight (no fade in): same arms in both clips.</summary>
+        public bool Switch(string name, float frame)
+        {
+            Clip c;
+            if (name == null || !clips.TryGetValue(name, out c)) return false;
+            cur = c;
+            t = Mathf.Max(FadeIn, frame / c.Fps);
+            return true;
+        }
+
+        // task 78 bug 4: Switch / ThenClip jumps crossfade from the old clip's pose (frozen) over XFade seconds
+        const float XFade = 0.35f;
+        Clip xPrev;
+        float xT, xLeft;
+
+        void StartXFade()
+        {
+            if (cur == null) return;
+            xPrev = cur; xT = t; xLeft = XFade;
+        }
+
+        static Quaternion Sample(Clip c, float tt, int i)
+        {
+            float ft = tt * c.Fps;
+            int f0 = Mathf.Min((int)ft, c.Frames - 1), f1 = Mathf.Min(f0 + 1, c.Frames - 1);
+            int nb = c.Bones.Length;
+            return Quaternion.Slerp(c.Rot[f0 * nb + i], c.Rot[f1 * nb + i], ft - f0);
         }
 
         readonly List<string> order = new List<string>();
@@ -343,6 +382,8 @@ namespace UmamusumeCompanion
         /// <summary>Fade the current clip out now (she starts talking, gets a fright, leaves the car).</summary>
         public void Stop()
         {
+            LoopClip = ThenFrom = null;
+            Speed = 1f;
             if (cur != null) t = Mathf.Max(t, cur.Length - FadeOut);
         }
 
@@ -356,7 +397,19 @@ namespace UmamusumeCompanion
         public void Apply(float dt)
         {
             if (cur == null) { Weight = 0f; return; }
-            t += dt;
+            t += dt * Speed;
+            if (ThenFrom != null && cur.Name == ThenFrom && t * cur.Fps >= ThenAt)
+            {
+                ThenFrom = null;
+                Speed = 1f;
+                Clip c2;
+                if (ThenClip != null && clips.TryGetValue(ThenClip, out c2)) { StartXFade(); cur = c2; t = Mathf.Max(FadeIn, ThenFrame / c2.Fps); }
+            }
+            if (LoopClip != null && cur.Name == LoopClip && LoopB > LoopA)
+            {
+                float a0 = LoopA / cur.Fps, b0 = LoopB / cur.Fps;
+                if (t >= b0) t = a0 + Mathf.Repeat(t - b0, b0 - a0);
+            }
             float len = cur.Length;
             if (t >= len) { cur = null; Weight = 0f; return; }
             Weight = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(Mathf.Min(t / FadeIn, (len - t) / FadeOut)));
@@ -365,6 +418,8 @@ namespace UmamusumeCompanion
             int f0 = Mathf.Min((int)ft, cur.Frames - 1), f1 = Mathf.Min(f0 + 1, cur.Frames - 1);
             float a = ft - f0;
             int nb = cur.Bones.Length;
+            if (xLeft > 0f) xLeft -= dt;
+            float xw = xLeft > 0f && xPrev != null ? Mathf.SmoothStep(0f, 1f, 1f - xLeft / XFade) : 1f;
             Quaternion hipDeform = hip.rotation * Quaternion.Inverse(hipRest);
             Quaternion frame = hipDeform;
             if (cur.Space == 1)
@@ -381,6 +436,11 @@ namespace UmamusumeCompanion
                 if (ri < 0) continue;
                 var b = rig[ri];
                 Quaternion d = Quaternion.Slerp(cur.Rot[f0 * nb + i], cur.Rot[f1 * nb + i], a);
+                if (xw < 1f)
+                {
+                    int pi = System.Array.IndexOf(xPrev.Bones, ri);
+                    if (pi >= 0) d = Quaternion.Slerp(Sample(xPrev, xT, pi), d, xw);
+                }
                 Quaternion target = frame * d * b.Rest;
                 float bw = Mathf.Lerp(cur.W[f0 * nb + i], cur.W[f1 * nb + i], a);
                 b.T.rotation = Quaternion.Slerp(b.T.rotation, target, Weight * bw);

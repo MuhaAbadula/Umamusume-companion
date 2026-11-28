@@ -1,121 +1,121 @@
 # naritataishin | Story | English
-istanbul_morning=Morning. I woke up on my own. Don't make things up.
-istanbul_morning=Saw the engines yesterday. Two of them. Rusty, but they're still there.
-istanbul_morning=Just like I thought. Boilers, pistons, connecting rods. It even smells of coal.
-istanbul_morning=I bought a gear at the market. Brass one. Not for you.
-istanbul_morning=I wanted to stay. But they're waiting for me back home. Hayahide rang the motel.
-istanbul_morning=Let's go. I miss a quiet room. Not the people.
-istanbul_morning=Open the [b]Map[/b] and pick the route back.
+istanbul_morning=Istanbul. Back in Berlin, it was just the name at the end of the route.
+istanbul_morning=I wanted to get here so badly I'd have taken a ride with anyone.
+istanbul_morning=I'm glad it was you, though.
+istanbul_morning=On the way back, I want a say in which road we take.
+istanbul_morning=Give me a minute before you start pointing things out. I want to try it myself.
+istanbul_morning=If I get stuck, I'll ask.
+istanbul_morning=Open the [b]map[/b]. Where are we now?
 
-back_6=Goodbye, Istanbul. It wasn't bad.
-back_6=The city's noisy. But the station was worth it.
+back_6=Istanbul. It still sounds strange when I say it out loud.
+back_6=If Ticket asks how far we got, I'm making her guess first.
 
-back_6_2=They drink tea from thimbled cups. Like hourglasses.
-back_6_2=Should've bought a cup. Forgot. Happens.
+back_6_2=They'll probably ask if I got tired of sitting in the car that long.
+back_6_2=Usually I'd sooner run than sit around waiting. I liked it here, though.
 
-back_6_3=I've got the gear in my pocket. Brass, warm.
-back_6_3=Avoid the potholes. I'll drop it if I have to, I'll kick it.
+back_6_3=They played my song on the radio once. The one I'd asked for.
+back_6_3=Sat there grinning till it was over. Good thing nobody saw me.
 
-back_5=On the way there, I just stared out the window and stayed silent.
-back_5=I'm silent now too. But it's not boring anymore.
+back_5=No rush to get anywhere on the way back.
+back_5=Well, not for me. I get to look out the window as long as I like.
 
-back_5_2=Bulgarians nod the other way round. Nodding means “no”.
-back_5_2=It works for me. If you nod, they'll get it wrong.
+back_5_2=I like knowing how much farther I've got to go. Especially in a race.
+back_5_2=Pick up the pace too soon and the others have time to catch you. Leave it a little too late and you run out of track.
 
-back_5_3=The clouds are low here. Like a balloon from a simple game.
-back_5_3=It's basic, I know. Don't look at me.
+back_5_3=When the scores come up in a game, I check who's ahead of me first.
+back_5_3=If there's only a couple of points in it, why turn it off? I'll have another go.
 
-back_4=Hayahide says he can't sleep because of me. Lies. It's Ticket.
-back_4=Though... maybe I am too.
+back_4=Hayahide'll want to know which way we went.
+back_4=I'll have to sit down with her and a map. I'd get mixed up after the first border trying to tell it from memory.
 
-back_4_2=Sea again. It's noisy. Fine, it doesn't bother me.
-back_4_2=People are louder. You can ignore the sea.
+back_4_2=Do you play games with the sound on or off?
+back_4_2=I have a hard time playing without sound. Sometimes the music tips you off before anything happens.
 
-back_4_3=Kreek grumbles I go to bed late. She's my roommate.
-back_4_3=Can't go to bed early. One more time, then sleep. Always like this.
+back_4_3=I hate losing just when I've worked out how to beat a level.
+back_4_3=There's no way I'm sleeping after that. I usually have another go.
 
-back_3=They opened the border here. Thousands left for the west.
-back_3=A crowd. But for something like this, I guess it's worth it.
+back_3=In a queue, you can't even see me behind all those shoulders.
+back_3=Then somebody spots me and tries to let me through like I'm a little kid. That's when I really want to leave.
 
-back_3_2=In Hungary they eat goulash with paprika. I'll cook it at home. Not for you.
-back_3_2=For you too. If you stop chatting.
+back_3_2=Think I'll try making goulash when we get home. Do you like spicy food?
+back_3_2=I'll put the pepper on the table. You can add as much as you like.
 
-back_3_3=See those rails along the road? Rusty. Good.
-back_3_3=You can drive along them for ages.
+back_3_3=Wonder which of us could do a faster lap in a racing game.
+back_3_3=You drive every day. But I know which corner you can take flat out.
 
-back_2=Germany's near soon. I want home, to a quiet room.
-back_2=It'll be quiet without the road. No, I didn't say that.
+back_2=I want to go home. I miss my room.
+back_2=It'll take some getting used to, though. Waking up and not having anywhere we need to drive.
 
-back_2_2=There are clock faces with figures on Prague's town hall. They're six hundred years old.
-back_2_2=Mechanical gears, still working. I want to see it. Not now.
+back_2_2=If my watch had a clear back, I'd keep turning it over.
+back_2_2=I could watch those gears for ages. Then I'd have to check the time all over again.
 
-back_2_3=Will they check us at the border? Gears aren't considered illegal.
-back_2_3=If they ask, I'll say it's a part. It's true.
+back_2_3=Better check what's banned before we get to the border.
+back_2_3=If I were driving, that'd go right out of my head.
 
-back_1=Last day on the road. Weird, I don't want it to end.
-back_1=You can stop by sometimes. If you want. I don't mind.
+back_1=Berlin's not far now. Come see me sometimes, yeah?
+back_1=You don't need a reason. I'd like that.
 
-back_1_2=So many Trabants. Smoking. Two-stroke, like our Laika.
-back_1_2=Simple engine. I like that.
+back_1_2=Whenever they ask about a trip back home, I get cut off right before the good bit.
+back_1_2=Ticket's the worst. She'll ask a question and start guessing the answer herself.
 
-back_1_3=What'll I do at home? Cook curry. Lie down. No, put the gear on the table first.
-back_1_3=Fine, I'll decide later. You didn't hear anything.
+back_1_3=I'm making curry when I get home. Come by this evening and I'll save you some.
+back_1_3=Even if you're late. I'll heat it up.
 
-turn_start=Huh? Are we heading back? ...Hm.
-turn_start=Shame. I wanted to see the station. Don't tell anyone I said that.
-turn_start=The rails won't go anywhere. They'll wait.
-turn_start=We'll go again when I want. Not sooner.
+turn_start=Turning back? Got it.
+turn_start=Shame. I wanted to make it to Istanbul.
+turn_start=If you try for Istanbul again, give me some notice.
+turn_start=I'm coming with you. And you won't have to wake me twice.
 
-home_5=Thick woods. Quiet. I like it here.
-home_5=Tell me if you want to stop. Not because I'm tired.
+home_5=Say if you feel like stopping.
+home_5=I could get out and stretch my legs too.
 
-home_5_2=Bulgarian yogurt's famous. Said to taste good with honey.
-home_5_2=We'll buy a jar next time. Not for you. Hm.
+home_5_2=I hear they eat yoghurt with honey in Bulgaria.
+home_5_2=I'll try it at home. I'll add my own honey, though. I don't like it too sweet.
 
-home_5_3=They dry peppers in bunches on the walls here. Red ones.
-home_5_3=Beautiful colour. Fiery. I'm not eating it.
+home_5_3=Shame we're heading back. When a race doesn't go my way, I want another shot.
+home_5_3=Guess I'll have to wait. Let me know if you decide to go for Istanbul again.
 
-home_4=Pretty. Even if we didn't make it, it's not bad.
-home_4=I liked driving. ...No, I didn't say that.
+home_4=I actually liked travelling this way.
+home_4=I can run out of things to say and you can just keep driving.
 
-home_4_2=Dubrovnik behind a stone wall. The wall's old and strong.
-home_4_2=Good construction. Stands for centuries without falling apart.
+home_4_2=Dubrovnik. I'll remember the name so I can find it on the map later.
+home_4_2=I want to see how much farther we had to go to get to Istanbul.
 
-home_4_3=It'll lower the wheel; I'll hold the jack. Don't imagine stuff.
-home_4_3=You change it, I'll pass you the keys.
+home_4_3=It's hard to tell what's making a car pull to one side while you're driving.
+home_4_3=If it starts doing that, pull over. We might have a flat.
 
-home_3=Ten thousand left for the west from here in '89.
-home_3=All together, noisy, but it worked. Well, a crowd's useful too.
+home_3=Istanbul was still a fair way from here.
+home_3=I know that. Shame I'll be left wondering if I'd have liked it there.
 
-home_3_2=Hungary. Goulash with paprika, smells from the road.
-home_3_2=I'll cook it at home. Not for you. Hm.
+home_3_2=Wonder what I should cook when I get home.
+home_3_2=I'd like to try making goulash. I'll ask around for a recipe.
 
-home_3_3=Wondering how to build a clock from gears.
-home_3_3=Not working yet. I'll fix it. Don't disturb me.
+home_3_3=Hardest time to put a game down is when it still seems too early for bed.
+home_3_3=You check the clock. Plenty of time. One level later, you've got to be up in three hours.
 
-home_2=They made a cartoon about a mole in Czechoslovakia. Kids watch it.
-home_2=The mole fixes things there too. Like you. Just louder.
+home_2=When we get home, I want to find out where they still run steam trains.
+home_2=Maybe there's one closer to Berlin. Somewhere we could get to and back in a day.
 
-home_2_2=They argued for ages in ČSSR over whether to use a hyphen or not in the name.
-home_2_2=Over a single dash. Stupid argument. Hm.
+home_2_2=Sturovo. Right, I've got it.
+home_2_2=If we ever come through here again, I'll see if I recognise the name.
 
-home_2_3=Not tired? It's not concern. If you fall asleep driving, I'll have to walk.
-home_2_3=Want me to drive? ...No. Laika won't listen to me. Forget it.
+home_2_3=How's your back? You've been driving a long time.
+home_2_3=Say if you need a break. I can wait.
 
-home_1=Dresden's behind us. Berlin next. Almost home.
-home_1=I'm not even cursing Laika. Almost. ...Okay, I am.
+home_1=It's not far home from Dresden now.
+home_1=Part of me wants to get there already, but I keep thinking about where else we could go.
 
-home_1_2=I'll take Laika's engine apart bit by bit when we get home. Curious how it works.
-home_1_2=But next time, you drive again.
+home_1_2=When I ask about the car, you can just show me once.
+home_1_2=I want to figure it out myself. If I can't, then I'll ask for a hand.
 
-home_1_3=Well, there we go. Delivered it. Didn't crash it.
-home_1_3=No thanks. Rest tomorrow, decide the day after.
+home_1_3=I haven't forgotten about Istanbul, you know.
+home_1_3=I'd go with you again. Even if we ended up turning back early.
 
 doze_fall=One more time... then sleep...
 doze_fall=Not sleeping. My eyes are resting...
 
 doze_mumble=Ticket... leave me alone... I'm sleeping...
-doze_mumble=Gears... wrong.
+doze_mumble=One more try... I've almost got it...
 doze_mumble=One more lap... mmm...
 
 doze_pat=...Hm.
@@ -127,23 +127,23 @@ doze_wake_crash=Ugh. What was that?
 
 doze_wake_thunder=Thunder? ...I wasn't sleeping.
 
-doze_wake_stop=Arrived? It drove fine. Don't get cocky.
+doze_wake_stop=Have we stopped? Must've dozed off.
 
-wake_wait=I'll wait in the car. If you fall asleep again, I'll kick you.
+wake_wait=I'll wait in the car. You get ready.
 
-wake_alarm=Get up. I'm already up.
-wake_alarm=Up you go. Not kicked yet.
-wake_alarm=Stop sleeping. Time's ticking.
-wake_alarm=Get up. I won't repeat it.
+wake_alarm=It's morning. Get up.
+wake_alarm=Hey, wake up. Time to get moving.
+wake_alarm=Enough sleep. Time's ticking.
+wake_alarm=Well? You getting up?
 wake_alarm=Wake up. There's work to do.
-wake_crash=Get up. I checked the car at night. Don't mess it up again.
+wake_crash=How are you feeling after yesterday? Take your time getting up.
 wake_alarm_s1=Get up. Quick.
-wake_alarm_s1=Getting going. No need to repeat it.
-wake_alarm_s2=Up you get. Off we go.
-wake_alarm_s2=Stop sleeping. Time's ticking.
+wake_alarm_s1=It's time. You hear me?
+wake_alarm_s2=Get up. We're going.
+wake_alarm_s2=Enough sleep. Time's ticking.
 wake_alarm_s3=Up. Let's head out while it's quiet.
-wake_alarm_s3=Wake up. It's a decent morning.
-wake_alarm_s4=Hey. Get up. I wasn't waiting. Just woke up.
-wake_alarm_s4=Up. It's... a nice morning out there.
-wake_alarm_s5=Up. Or I'll kick you.
-wake_alarm_s5=Up. I've already packed everything.
+wake_alarm_s3=You awake? We could start getting ready.
+wake_alarm_s4=Hey. Sleep well?
+wake_alarm_s4=Time to get up. Or do you need a couple more minutes?
+wake_alarm_s5=You all right? Get enough sleep?
+wake_alarm_s5=Go on, get up. I'll wait.

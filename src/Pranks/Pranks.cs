@@ -145,7 +145,7 @@ namespace UmamusumeCompanion
                 if (randomGesturesSrc != GestureNames)
                 {
                     var l = new List<string>();
-                    foreach (var g in GestureNames) if (!g.StartsWith("prank_", StringComparison.OrdinalIgnoreCase)) l.Add(g);
+                    foreach (var g in GestureNames) if (!g.StartsWith("prank_", StringComparison.OrdinalIgnoreCase) && g != "play_sit" && g != "look_up") l.Add(g);
                     randomGestures = l.ToArray();
                     randomGesturesSrc = GestureNames;
                 }

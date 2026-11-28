@@ -133,6 +133,7 @@ namespace UmamusumeCompanion
             if (!real) return;   // Ctrl+F9 / load: she is placed by the game (WakeUpFromLoad)
             DayStarted = true;
             Luck.NewDay();
+            if (!b.homeBed) Trust.OnMotelNight();
             Souvenirs.OnMorning();   // task 47
             try
             {
@@ -145,6 +146,13 @@ namespace UmamusumeCompanion
 
     public partial class CompanionDriver
     {
+        internal static string MorningLine(bool istanbul, bool crash)
+        {
+            if (istanbul) return null;
+            if (crash) return "wake_crash";
+            int stage = Trust.Stage;
+            return stage > 0 ? "wake_alarm_s" + stage : "wake_alarm";
+        }
         // task 13: Hold for the whole morning (no follow, no walk to the car)
         enum MPhase { Off, Hold }
         MPhase mornPhase = MPhase.Off;
@@ -212,7 +220,7 @@ namespace UmamusumeCompanion
 
             mornPose = MPose.Wait;
             mornPoseAt = Time.time + MornPoseDelay;
-            mornLineKey = istanbul ? null : crash ? "wake_crash" : "wake_alarm";   // Istanbul: the morning talk instead
+            mornLineKey = MorningLine(istanbul, crash);
             mornLineSent = mornTalkSeen = mornAfterDone = false;
             mornTalkEndAt = -1f;
         }

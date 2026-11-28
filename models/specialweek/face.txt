@@ -1,0 +1,32 @@
+# Facial expressions, built from the Uma face/ear shape keys in char.bin.
+#   name = Group(Tag) weight, Group(Tag).L weight, ...
+# Group: EyeBrow | Eye | Mouth | Ear. Both sides and every mesh with that shape get it; add .L / .R for one side.
+# Weight 0..100. Edit freely; the game reads this file at start.
+# Names the mod uses: smile happy dreamy smug surprise shock worried sad annoyed sleepy focused hum yawn asleep
+# Ear layer (plays on top of everything): twitch_l/r out_l/r fwd_l/r back_l/r roll_l/r
+smile    = Mouth(WaraiA) 80, EyeBrow(WaraiA) 60, Ear(Tanosi) 50
+happy    = Eye(WaraiA) 100, Mouth(WaraiB) 90, EyeBrow(WaraiB) 70, Ear(Tanosi) 100
+speed_fun = Mouth(WaraiB) 90, EyeBrow(WaraiB) 70, Ear(Tanosi) 100
+dreamy   = Eye(DereA) 100, Eye(HalfA) 20, Mouth(DereA) 100, EyeBrow(DereA) 80, Ear(Dere) 80
+smug     = EyeBrow(DoyaA) 90, Mouth(DoyaA) 100, Eye(HalfC) 40, Ear(Up) 50
+surprise = Eye(OdorokiA) 90, EyeBrow(OdorokiA) 90, Mouth(OdorokiA) 80, Ear(Biku) 100
+shock    = Eye(OdorokiB) 100, EyeBrow(OdorokiB) 100, Mouth(OdorokiB) 90, Ear(Biku) 100
+worried  = EyeBrow(KomariA) 90, Mouth(KomariA) 80, Ear(Kanasi) 50
+sad      = Eye(UreiA) 70, EyeBrow(UreiA) 90, Mouth(UreiA) 80, Ear(Down) 60
+annoyed  = Eye(JitoA) 80, EyeBrow(JitoA) 80, Mouth(JitoA) 80, Ear(Ikari) 60
+sleepy   = Eye(HalfB) 65, EyeBrow(UreiA) 25, Ear(Down) 45
+focused  = Eye(SeriousA) 70, EyeBrow(SeriousA) 80, Ear(Front) 40
+snack_chew = Mouth(TalkA_A_S) 65, Mouth(CheekA_L) 35
+hum      = Eye(WaraiA) 100, Mouth(WaraiA) 60, EyeBrow(WaraiA) 50, Ear(Tanosi) 60
+yawn     = Eye(CloseA) 90, Mouth(OdorokiB) 100, Mouth(Scale_D) 40, EyeBrow(UreiA) 60, Ear(Down) 30
+asleep   = EyeBrow(UreiA) 15, Ear(Down) 70
+twitch_l = Ear(Biku_N).L 75
+twitch_r = Ear(Biku_N).R 75
+out_l    = Ear(Side).L 30
+out_r    = Ear(Side).R 30
+fwd_l    = Ear(Front).L 30
+fwd_r    = Ear(Front).R 30
+back_l   = Ear(Back).L 35
+back_r   = Ear(Back).R 35
+roll_l   = Ear(Roll).L 40
+roll_r   = Ear(Roll).R 40

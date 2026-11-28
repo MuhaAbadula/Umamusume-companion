@@ -44,6 +44,7 @@ namespace UmamusumeCompanion
             Morning.CrashSinceMorning = true;
             if (!Active) return;
             Doze.OnCrash();
+            Life.OnCrashTrust(false);
             Life.Current.React("surprise", 1.0f, "annoyed", 1.8f);
             quietUntil = Time.time + 6f;
         }
@@ -53,6 +54,7 @@ namespace UmamusumeCompanion
             Morning.CrashSinceMorning = true;
             if (!Active) return;
             Doze.OnCrash();
+            Life.OnCrashTrust(true);
             Life.Current.React("shock", 1.4f, "worried", 3f);
             quietUntil = Time.time + 6f;
         }

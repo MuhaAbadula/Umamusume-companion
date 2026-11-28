@@ -1,0 +1,7 @@
+name=Спешл Уик
+name_en=Special Week
+name_acc=Спешл Уик
+height_m=1.58
+body_scale=1.02
+voice_pitch=1.0
+features=seated_tail,souvenirs

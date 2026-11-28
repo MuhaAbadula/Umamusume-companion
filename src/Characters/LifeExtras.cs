@@ -232,7 +232,7 @@ namespace UmamusumeCompanion
         public void PatCursor()
         {
             float miss, dist, r;
-            bool aim = Enabled && (AimAtHead(out miss, out dist, out r) || SouvenirCursor() || (ExtraCursor != null && ExtraCursor()));   // task 87: the vial   // task 47: over a souvenir too
+            bool aim = Enabled && (AimAtHead(out miss, out dist, out r) || FruitAimed() || SouvenirCursor() || (ExtraCursor != null && ExtraCursor()));   // task 87: the vial   // task 47: over a souvenir too
             var cam = Camera.main;
             var drag = cam != null ? cam.GetComponent<DragRigidbodyC>() : null;
             var cur = drag != null ? drag.cursors : null;
@@ -265,6 +265,7 @@ namespace UmamusumeCompanion
         void CheckPat(float now, bool inCar, bool asleep, bool talking)
         {
             if (!GameClick()) return;
+            if (OfferingFruit) { if (FruitAimed()) TakeFruit(now); return; }
             float miss, dist, r;
             bool hit = AimAtHead(out miss, out dist, out r);
             if (r > 0f && dist < 8f)
@@ -278,6 +279,7 @@ namespace UmamusumeCompanion
             patAsleep = asleep;
             if (asleep) { DozePat(now); return; }
             if (PatBusy != null && PatBusy()) { Attend(Look.Player, 1.5f, 0.6f); SayMaybe("addon_busy", 1f, 15f); return; }   // task 87: pouring
+            if (NaritaPat(now)) { patT = -1f; return; }
             // turn to the player like when he gets back in, and keep looking a while after the last click
             Attend(Look.Player, patDur + 1.5f, 1f);
             tailWagEnd = now + 2.2f;  // standing: a happy wag
@@ -287,12 +289,14 @@ namespace UmamusumeCompanion
             if (talking) return;
             // words rarely (user: too often): the face and ears react every time, a line now and then,
             // and each line said makes the next one less likely (x0.6, down to 5 %)
-            if (patTimes.Count >= 4)
+            if (patTimes.Count >= 4 && NaritaHere) { patTimes.Clear(); SayMaybe("pat_many", 1f, 120f); }
+            else if (patTimes.Count >= 4)
             {
                 patTimes.Clear();
                 Emote("smug", 2.5f, 0.9f);
                 if (SayMaybe("pat_many", Mathf.Max(0.1f, 0.5f * Mathf.Pow(0.6f, patManySaid)), 300f)) patManySaid++;
             }
+            else if (NaritaHere) NaritaPatLine(now);
             else if (SayMaybe("pat", Mathf.Max(0.05f, 0.2f * Mathf.Pow(0.6f, patSaid)), 120f)) patSaid++;
         }
         int patSaid, patManySaid;
@@ -304,8 +308,8 @@ namespace UmamusumeCompanion
             if (patT >= patDur) { patT = -1f; patW = 0f; return; }
             patW = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(Mathf.Min(patT / 0.2f, (patDur - patT) / 0.6f)));
             if (patAsleep) { Face.Want("smile", 0.6f * patW, 0.3f); return; }
-            Face.Want("happy", patW, 0.12f);
-            Face.Solo("happy", patW);            // nothing else on the face while patted (no mixed eye shapes)
+            Face.Want(PatFaceName, patW, 0.12f);
+            Face.Solo(PatFaceName, patW);            // nothing else on the face while patted (no mixed eye shapes)
             Face.Pulse("back_l", 2.2f * patW);   // ears flat under the hand
             Face.Pulse("back_r", 2.2f * patW);
         }

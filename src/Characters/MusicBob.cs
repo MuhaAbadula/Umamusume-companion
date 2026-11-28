@@ -41,6 +41,7 @@ namespace UmamusumeCompanion
             float f = Mathf.Clamp(BobShare, 0.01f, 0.99f);
             // 30 % = the designed 60-180 s; the pause shrinks towards 100 % and grows towards 0 %
             float mul = (1f - f) / f * (0.3f / 0.7f);
+            if (NaritaHere) mul /= NPlaying ? NaritaBobPlay : NaritaBobFree;
             int lv = Luck.Level;
             if (lv >= 1) mul *= 0.6f;
             else if (lv <= -2) mul *= 1.5f;

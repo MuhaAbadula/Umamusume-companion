@@ -1,0 +1,13 @@
+# Uncle Swap character info (UTF-8, key=value)
+name=Нарита Тайшин
+name_en=Narita Taishin
+name_acc=Тайшин
+# used only when there is no voice\ folder: the uncle's mumbles pitched up by this factor
+voice_pitch=1.0
+features=trust,souvenirs
+# task 78: canon 145 cm. Export height (ears included, like Fukukitaru's 2.318 u) 2.343 u;
+# body_scale = 2.318 x 145/158 / 2.343 = 0.908 -> 2.127 u
+body_scale=0.908
+height_m=1.45
+# task 86: her standing idle = Uma crossed arms (type00 udekumi02); the uncle looks at the player
+idle_head=0

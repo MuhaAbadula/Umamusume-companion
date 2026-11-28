@@ -18,7 +18,7 @@ namespace UmamusumeCompanion
         public override string ModName => "Umamusume companion";
         public override string ModAuthor => "Osobl";
         public override string ModDescription => "Travel with an Umamusume companion. Use the command wheel to ask her to follow, wait, board the car or fetch a crate.";
-        public override string ModVersion => "0.55.5";
+        public override string ModVersion => "0.55.6";
         public override JaLoader.Common.WhenToInit WhenToInitMod => JaLoader.Common.WhenToInit.InGame;
         public override bool UseAssets => true;
 
@@ -101,6 +101,10 @@ namespace UmamusumeCompanion
             AddToggle("Pranks", "Sweep: pranks and radio tricks", true);
             AddSlider("PrankMinutes", "Driving between Sweep's pranks (min, 0 for off)", 0, 30, 12, true);
             AddToggle("Experiments", "Tachyon: experiments (potions for you at stops, additives for the Laika)", true);   // task 87
+            AddToggle("TrustGrows", "Narita: trust grows (off = warm at once, stage 5)", true);
+            AddSlider("NaritaDistract", "Narita: how often she looks up from the console (%)", 0, 200, 100, true);
+            AddSlider("NaritaPhone", "Narita: phone height over her hands (cm, 5 = resting on her fingers, less = deeper in the hands)", 0, 15, 5, true);
+            AddSlider("NaritaChat", "Narita: how often she talks at stage 5 (%)", 0, 200, 100, true);
             AddSlider("PotionMinutes", "Time between Tachyon's potions (min, 0 for off)", 0, 60, 30, true);
             AddSlider("AddonMinutes", "Driving between Tachyon's additives (min, 0 for off)", 0, 60, 35, true);
             AddToggle("ExpStrong", "Intense camera effects for Tachyon's experiments", true);
@@ -288,12 +292,13 @@ namespace UmamusumeCompanion
                 JaLoader.Console.LogError(ModID, "Can't list models: " + e.Message);
             }
             list.Sort(StringComparer.OrdinalIgnoreCase);
-            // JaLoader saves the dropdown index. Put the sixth pack after the existing choices.
-            int oguri = list.FindIndex(name => string.Equals(name, "oguricap", StringComparison.OrdinalIgnoreCase));
-            if (oguri >= 0)
+            // JaLoader stores indices. Append later additions in their original release order.
+            foreach (string id in new[] { "oguricap", "specialweek", "silencesuzuka" })
             {
-                string pack = list[oguri];
-                list.RemoveAt(oguri);
+                int index = list.FindIndex(name => string.Equals(name, id, StringComparison.OrdinalIgnoreCase));
+                if (index < 0) continue;
+                string pack = list[index];
+                list.RemoveAt(index);
                 list.Add(pack);
             }
             return list.ToArray();
@@ -451,8 +456,9 @@ namespace UmamusumeCompanion
             Souvenirs.Enabled = GetToggleValue("Souvenirs");
             if (models.Length > 0)   // props\ of the picked pack (PropMesh: souvenirs)
             {
-                Souvenirs.Pack = models[Mathf.Clamp(GetDropdownValue("Model"), 0, models.Length - 1)];
-                PropMesh.Dir = Path.Combine(Path.Combine(ModelsDir, models[Mathf.Clamp(GetDropdownValue("Model"), 0, models.Length - 1)]), "props");
+                string pack = models[SelectedModel];
+                Souvenirs.SelectPack(pack);
+                PropMesh.Dir = Path.Combine(Path.Combine(ModelsDir, pack), "props");
             }
         }
 
@@ -475,6 +481,10 @@ namespace UmamusumeCompanion
             Life.PranksOn = GetToggleValue("Pranks");
             Life.PrankMinutes = GetSliderValue("PrankMinutes");
             CompanionDriver.ExpOn = GetToggleValue("Experiments");
+            Trust.Grows = GetToggleValue("TrustGrows");
+            Life.NaritaDistract = GetSliderValue("NaritaDistract") / 100f;
+            Life.NaritaChat = GetSliderValue("NaritaChat") / 100f;
+            Life.PhoneLiftCm = GetSliderValue("NaritaPhone") - 5f;
             CompanionDriver.PotionMinutes = GetSliderValue("PotionMinutes");
             CompanionDriver.AddonMinutes = GetSliderValue("AddonMinutes");
             ExpFx.StrongOn = GetToggleValue("ExpStrong");

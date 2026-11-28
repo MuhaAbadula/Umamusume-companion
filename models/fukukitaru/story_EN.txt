@@ -1,101 +1,101 @@
 # fukukitaru | Story | English
 istanbul_morning=Good morning and good luck! I got up early and read my fortune.
-istanbul_morning=I had a dream about my grandma last night. She was by the Bosphorus with that same suitcase, waving westward.
-istanbul_morning=I thought I'd stay and look for more luck. But the great Shiraoki says you have to take any luck you find home with you, or you'll lose it on the way.
-istanbul_morning=And... Gran came to Berlin from Istanbul. She always says that was the luckiest road she ever took.
-istanbul_morning=I want to take her route in the same direction. Then sit next to her and tell her everything.
-istanbul_morning=I bought her a [b]nazar[/b] at the market. It's a blue eye charm that keeps bad luck away. Miss Nyaa's already inspected it.
-istanbul_morning=So let's head home! Open the [b]Map[/b] and switch to reverse direction.
+istanbul_morning=I dreamt about Grandma last night. She was standing by the Bosphorus with that same suitcase, waving towards the west.
+istanbul_morning=I thought I'd stay here until I found out what sort of luck was waiting for me.
+istanbul_morning=Then I woke up thinking, this is where Grandma set off for Berlin. She says it was the happiest journey of her life.
+istanbul_morning=I want to go the way she went, in the same direction. Then I can sit down beside her and tell her everything.
+istanbul_morning=And I'll tell her, “You can ask [b]Miss Nyaa[/b]! She was with us the whole way!”
+istanbul_morning=So let's go home! Open the [b]Map[/b] and switch it to the homeward route.
 
 back_6=Goodbye, Istanbul! Miss Nyaa is waving at you. Well, she waves all the time.
-back_6=Grandma must've looked back at this city too. Then she just looked ahead. I can't do that; I'll keep looking around.
+back_6=I bet Grandma looked back at the city too. Then she looked straight ahead. I can't do that. I'll keep looking back.
 
 back_6_2=I heard they read fortunes in coffee grounds in Turkey. You drink it, turn the cup over, and read your fate from the patterns on the bottom.
-back_6_2=I'll learn it when we get home. Miss Nyaa'll be the first client. Hehe ♪
+back_6_2=I'll learn how when we get home. Miss Nyaa can be my first customer. Hehe ♪
 
-back_6_3=I'm practising what I'll say to grandma. “Grandma, I was in your city. It's big, noisy, and it remembers you.”
+back_6_3=I'm practising what to say to Grandma. “Grandma, I've been to your city. It's big and noisy, and it remembers you.”
 back_6_3=Mm-hmm, too formal. Better to just say, “Grandma, I made it!”
 
-back_5=You know, on the way there I kept waiting for a sign. I checked every turn, counted every raven.
-back_5=But now I just look at the mountains and the old ladies with baskets by the road. I haven't counted a single raven!
+back_5=On the way to Istanbul I was so eager to get there, I kept trying to guess what was round the next bend.
+back_5=Now I'm quite happy here by the window. You'll see the bend before I do anyway.
 
 back_5_2=They say in Bulgaria they make perfume oil from roses. There's a Rose Valley somewhere in the middle of the country.
-back_5_2=There's a sea over there! I'll find a red one—red means luck. I'd love to stay, but grandma's waiting for us.
+back_5_2=If I ever get to that valley, I'd love to see how they gather the petals. Grandma would love the smell.
 
-back_5_3=Miss Ny keeps looking back, towards where Istanbul is. She's saying goodbye.
-back_5_3=Enough, Miss Ny. Grandma's waiting for us both. She's the one who gave you to me.
+back_5_3=So, Miss Nyaa, how did you like Istanbul? You're a traveller now too!
+back_5_3=Come on, Miss Nyaa. Grandma's waiting for both of us. She's the one who gave you to me, remember?
 
-back_4=Grandma said their tyre went flat somewhere here, and local kids helped change it. She gave them all her sweets.
-back_4=If ours goes flat, I'm ready. I've got sweets on me!
+back_4=Grandma said they got a flat tyre somewhere round here. Some local kids helped change it, and she gave them all her sweets.
+back_4=I wonder what those kids told their families about her when they got home. I'd remember a thing like that.
 
-back_4_2=Remember I left a peace talisman here on the way there? I'm not checking—it just hangs there, I trust.
-back_4_2=May it stay peaceful here always. I'll pray to Great Shiraoki again for this beautiful coast.
+back_4_2=I usually ask Shiraoki to look after us. Do you think I could ask for a whole town at once?
+back_4_2=While we're here, I'll ask Shiraoki to look after Dubrovnik too.
 
-back_4_3=I'll tell grandma about the sea. Maybe she drove this road too and remembers every turn.
-back_4_3=If not, I'll tell her as news. Grandmas love news.
+back_4_3=The first time Grandma told me about her trip, I kept interrupting. I wouldn't even let her get as far as Berlin!
+back_4_3=Now I'd like to hear her out. I wonder what she remembers about the sea.
 
-back_3=The bridge in Sturovo still isn't fixed. Grandma'll be upset.
-back_3=No worries—I predicted they'll fix it someday. Maybe not soon, but predictions don't lie. Almost never.
+back_3=Grandma's bound to ask about the bridge in Sturovo. She told me what it looked like when she came through.
+back_3=I'll tell her we made it to Hungary first. If I start with the bridge, she'll worry.
 
 back_3_2=You know Hungarians dry red peppers in bunches on house walls? Paprika!
 back_3_2=Red like my daruma. I'd hang one of those bunches by the door. Mmm-hmm, for luck.
 
-back_3_3=Lake Balaton's nearby—called the Hungarian sea. People go there to relax like it's a real sea.
-back_3_3=We're not stopping today: grandma's waiting. But now I've got my own sign—who sees Balaton returns. Hehe ♪
+back_3_3=Lake Balaton's somewhere near here. They call it the Hungarian Sea. People go there on holiday, just like the seaside.
+back_3_3=I'd love to take Grandma to Balaton someday. We could sit by the water and she could tell me if she saw the lake on her trip.
 
-back_2=Just a bit more, and Germany. I miss my bed. And the garage with its petrol smell!
+back_2=Nearly in Germany now. I miss my bed. And the smell of petrol in the garage!
 back_2=Oh. I guess I got that from you.
 
-back_2_2=I heard the Czechs and Slovaks now have a writer as president. He wrote plays but was in prison under the old regime.
-back_2_2=No fortune-telling can predict that!
+back_2_2=I heard the Czechs and Slovaks have a writer for a president now. He used to write plays.
+back_2_2=I wonder if he still has time to write. Maybe there's a play he never got to finish.
 
 back_2_3=I heard the Elbe starts in Czechia. It's called the Labe in Czech and flows straight into Germany, towards Dresden.
-back_2_3=One river, two names. Just like luck: it's the same everywhere but has different names.
+back_2_3=Grandma probably knows both names. I'll ask which one she used.
 
-back_1=Last day on the road. Strangely, I'm even sad it's ending.
+back_1=Our last day on the road. Funny, I'm a little sad it's nearly over.
 back_1=Grandma came to Berlin back then and stayed. And when we get home... what then?
 back_1=Mmm-hmm! I'll read our fortune and see where we're going next. Great Shiraoki, make it somewhere good!
 
-back_1_2=So many Trabants on the road! They're smoking, humming, and each one must have its own talisman.
-back_1_2=We've got a two-stroke engine too—we're family with them. Hehe ♪
+back_1_2=I wonder if other drivers carry lucky charms. I'd love to ask one of them.
+back_1_2=I could show them Miss Nyaa. Then they'd know why I asked.
 
-back_1_3=Grandma'll ask about the route, and I've recounted it so many times along the way the story changes every time.
-back_1_3=I'll draw a fortune to decide where to start. The first bit matters most. Like the first slip you draw.
+back_1_3=The closer we get to Berlin, the harder it is to decide where to start my story.
+back_1_3=Oh, I know Grandma. She'll ask me how the trip went before I get a word in.
 
 turn_start=Oh... We're turning round? Mmm. That's a shame. I was looking forward to going a bit further.
-turn_start=Hang on, I'll read our fortune. Let's see... The great Shiraoki says the time isn't ripe for this trip yet. We shouldn't pick it early.
-turn_start=So we're not returning in vain. We'll get ready better and try again. The city on two continents won't vanish.
-turn_start=He who believes shall be saved! Let's go.
+turn_start=Hang on, can I read my fortune? I want to ask Shiraoki when to set off again.
+turn_start=What am I waiting for, though? Shiraoki isn't going to come to your garage for me. I'll come myself!
+turn_start=Let's go home. Will you tell me when you're ready to head out again?
 
-home_5=We've been through these mountains before, yet I'm still staring at them wide-eyed. They look totally different from this side.
-home_5=I remember this turn. Back then it said “be careful,” but now it's more like “hey there.” Hehe ♪
+home_5=I've got more time to look out the window on the way back. On the way out, all I could think about was how much further it was to Turkey.
+home_5=If I were driving, I'd never get to look at all this. Thanks for bringing me.
 
 home_5_2=They say Bulgarian yogurt is famous all over the world.
-home_5_2=I want to try it. I'll remember: I need to buy a jar next time. For health and just because.
+home_5_2=I'd like to try it. Next time I'll remember to buy a jar. It's good for you, and, well... I want some.
 
 home_5_3=And Bulgarians nod the other way round. Shaking your head means “yes,” nodding means “no.” That's what they say.
 home_5_3=I've spent years reading signs, and here a nod means no! I'll have to read my fortunes twice as carefully.
 
-home_4=The sea's nearby, the mountains are nearby. Driving on a road like this is happiness in itself.
-home_4=Even if we've been here before, I'm not tired of it.
+home_4=I wonder what Grandma will remember when I say “Yugoslavia”.
+home_4=Just this once, I'll let her go first. Then it's my turn. I've got a story to tell too!
 
-home_4_2=Dubrovnik's surrounded by a stone wall: an entire city under protection. Like a talisman in your palm.
-home_4_2=They say it's been standing for centuries. A real talisman! I wish I had one for my garage.
+home_4_2=I hear there's a wall round Dubrovnik. What would I hang on the gate of a city like that?
+home_4_2=A horseshoe, I think. But which side of the gate? We set off facing one side and come home facing the other.
 
-home_4_3=At every turn, Miss Nyaa slips off my back. I'm tightening the straps for the tenth time already.
-home_4_3=Hold on, Miss Nyaa! The road's beautiful, so we can endure it. Hehe ♪
+home_4_3=Miss Nyaa, I forgot to ask you. Did you want to keep going too?
+home_4_3=Well, you can't tell me out loud. Shall I read your fortune tonight?
 
-home_3=You know, last year thousands of East Germans left through Hungary—she opened the border with Austria.
-home_3=If I'd guessed back then, it would've said “big change.”
+home_3=Did you know thousands of East Germans left through Hungary last year? Hungary opened its border with Austria.
+home_3=If I'd drawn a fortune then, I bet it would have said “a big change”.
 
-home_3_2=I read the signs but don't understand anything. Hungarian, they say, isn't like any other language.
-home_3_2=No worries, luck speaks the same language everywhere. And I'll recognize the word “motel” anyway.
+home_3_2=I'd love to learn enough Hungarian to ask for directions.
+home_3_2=Though what would I do when they answered me in Hungarian? I'd better start with “thank you”.
 
-home_3_3=Look at all this sky! See those clouds? That one looks like Miss Nyaa. And that one's a daruma!
-home_3_3=That's fortune-telling too, via clouds. Means a good road ahead! Mmm-hmm.
+home_3_3=Did you ever read fortunes in the clouds as a kid? I could lie there half the day looking for shapes.
+home_3_3=If I thought I saw a cat, I already knew it was going to be a good day.
 
 home_2=They say in Prague they once brought a clay giant to life. Called a golem.
-home_2=I don't believe it... but what if I get the fortune exactly right? Hehe ♪ Tell me if you see a little clay man by the road.
+home_2=Grandma likes stories like that. But then she asks, “Do you believe it yourself?” What am I supposed to say to that?
 
 home_2_2=I heard in Czechoslovakia they argued for ages over whether to use a hyphen in the country name. Czechs and Slovaks couldn't agree.
 home_2_2=If only all arguments were like that. Let them keep arguing over hyphens peacefully.
@@ -104,16 +104,16 @@ home_2_3=When you're around, it's obvious it's a good day—no fortune-telling n
 home_2_3=Hehe ♪ But I'll still do it later, just to be thorough.
 
 home_1=Dresden's behind us, Berlin's ahead. Last stretch. We're almost home!
-home_1=Grandma would say: the road home counts as luck too.
+home_1=Grandma would say it's good luck to be heading home, too.
 
-home_1_2=We've come back early, so I've still got plenty of energy. I'll read our fortune and see when we're going back. It might be next week!
+home_1_2=I still want to see Istanbul. When we get back, I'll read my fortune and find a good day to set off.
 home_1_2=Mmm-hmm! I can already feel it—the answer'll be good.
 
-home_1_3=Thanks for driving me. Without you, I'd be at home guessing about the road instead of actually driving it.
+home_1_3=Thanks for bringing me along. Back home I'd still be wondering what this road was like.
 home_1_3=Now I can read our fortune again. For the next trip this time. Mm-hm.
 
 doze_fall=Oh... I'll just close my eyes. Miss Nyaa will keep watch.
-doze_fall=My eyes close by themselves... It's all because of the night.
+doze_fall=I can hardly keep my eyes open... You'll wake me, won't you?
 
 doze_mumble=Great... luck... mmm...
 doze_mumble=Oh great Shiraoki, just five more minutes...
@@ -124,31 +124,31 @@ doze_pat=Hehe... ♪
 doze_wake_bump=Huh?! I wasn't sleeping! I was... meditating.
 doze_wake_bump=What? Where are we? Did I miss anything?
 
-doze_wake_crash=Oi! Evil spirits pushed the car!
+doze_wake_crash=Ah! Evil spirits gave the car a shove!
 
 doze_wake_thunder=Thunder?! That's a sign... a sign I fell asleep, right?
 
-doze_wake_stop=We're here already? You drove so smoothly I dozed off. Hehe ♪
+doze_wake_stop=Have we stopped? Oh, I thought I was dreaming.
 
 wake_wait=I'll wait in the car. Just don't fall asleep again!
 
 wake_alarm=Good morning and good luck! Get up, the road's waiting.
-wake_alarm=Up! I've already checked: today's a good day to drive.
-wake_alarm=You sleep like Miss Nyaa after lunch. Wake up, it's already light!
-wake_alarm=Mmmhmm! I got up before the sun. Now it's your turn.
-wake_alarm=Get up, get up! Luck favors those who leave early.
-wake_crash=Wake up! I asked great Shiraoki last night so the car stays whole today.
+wake_alarm=Up you get! What do you think I'll draw today?
+wake_alarm=Morning already. If you want another minute, I'll sit here with you.
+wake_alarm=Wake up! Or I'll have to read your fortune just to find out when you'll open your eyes.
+wake_alarm=Up, up! Luck favours an early start.
+wake_crash=Morning. How are you after yesterday's crash? I keep wondering if you got hurt.
 
-fortune_start=Wait, let me read the fortune now...
+fortune_start=Hang on, let me read our fortune...
 fortune_1=Great luck! Hehehe, we're unbeatable today!
-fortune_2=Good luck! A fine day to drive far away.
-fortune_3=Average luck. Mmmhmm, this'll do for driving.
+fortune_2=Good luck! A good day to put some miles behind us.
+fortune_3=Fair luck. Mm-hmm, that'll do for a day on the road.
 fortune_4=A little luck... Well, a little still counts!
-fortune_5=Uuu... Bad luck. It's over for me!
-fortune_5b=Right. Believe it and you'll survive! Let's go.
+fortune_5=Oh no... Bad luck. I'm doomed!
+fortune_5b=All right. Have faith and you'll be saved! Let's go.
 
 luckfx_shop_good=Look, cheaper! Luck's on our side, hehehe ♪
 luckfx_shop_bad=Expensive... It's all my bad luck, sorry.
-luckfx_crate_good=Good price! Great Shiraoki loves bargain hunters.
-luckfx_border_pass=We skipped it and didn't check! Thanks, great Shiraoki.
-luckfx_border_search=Uuu... I knew we'd get checked.
+luckfx_crate_good=That's a good price! Great Shiraoki must love traders.
+luckfx_border_pass=They let us through without a search! Thank you, Great Shiraoki!
+luckfx_border_search=Oh no... I knew they'd search us.

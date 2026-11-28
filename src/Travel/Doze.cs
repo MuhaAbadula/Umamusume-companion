@@ -128,7 +128,7 @@ namespace UmamusumeCompanion
             switch (Doze.Phase)
             {
                 case DozePhase.Awake:
-                    if (Doze.Enabled && dozeNight && !dozedThisNight && seated && !asleep && !talking && !dialog && !border && !motel
+                    if (Doze.Enabled && TrustDozeOk && dozeNight && !dozedThisNight && seated && !asleep && !talking && !dialog && !border && !motel
                         && drive >= Doze.Minutes * 60f && GestureWeight <= 0.01f && reactT < 0f
                         && (CanSay == null || CanSay()))
                         DozeBegin("timer");

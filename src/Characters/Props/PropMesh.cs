@@ -26,19 +26,19 @@ namespace UmamusumeCompanion
         public static Mesh Get(string name)
         {
             Mesh m;
-            if (meshes.TryGetValue(name, out m)) return m;
-            if (failed.Contains(name)) return null;
+            string path = Path.Combine(Dir ?? "", name + ".obj");
+            if (meshes.TryGetValue(path, out m)) return m;
+            if (failed.Contains(path)) return null;
             try
             {
-                string path = Path.Combine(Dir ?? "", name + ".obj");
                 if (string.IsNullOrEmpty(Dir) || !File.Exists(path)) throw new FileNotFoundException("no " + path);
                 m = Read(path, name);
-                meshes[name] = m;
+                meshes[path] = m;
                 return m;
             }
             catch (Exception e)
             {
-                failed.Add(name);
+                failed.Add(path);
                 Debug.LogWarning("[Umamusume companion] PropMesh: " + name + " not loaded: " + e.Message);
                 return null;
             }
@@ -48,10 +48,10 @@ namespace UmamusumeCompanion
         public static Material Material(string png)
         {
             Material m;
-            if (mats.TryGetValue(png, out m)) return m;
+            string path = Path.Combine(Dir ?? "", png);
+            if (mats.TryGetValue(path, out m)) return m;
             try
             {
-                string path = Path.Combine(Dir ?? "", png);
                 if (string.IsNullOrEmpty(Dir) || !File.Exists(path)) throw new FileNotFoundException("no " + path);
                 var tex = new Texture2D(2, 2, TextureFormat.RGB24, true) { name = "Fuku_" + Path.GetFileNameWithoutExtension(png) };
                 if (!tex.LoadImage(File.ReadAllBytes(path))) throw new Exception("bad png " + path);
@@ -68,7 +68,7 @@ namespace UmamusumeCompanion
                 m = null;
                 Debug.LogWarning("[Umamusume companion] PropMesh: material " + png + " not loaded: " + e.Message);
             }
-            mats[png] = m;
+            mats[path] = m;
             return m;
         }
 

@@ -1,140 +1,140 @@
 # agnestachyon | Story | English
-istanbul_morning=Morning. I barely slept. Too much data to process.
-istanbul_morning=I went up the Galata Tower yesterday. The wind up there is fierce. I think Çelebi was counting on it.
-istanbul_morning=I stood by the railing, trying to work out what he must've felt before jumping.
-istanbul_morning=Still, he took off alone. There are two of us on the way back. That's a different experiment altogether.
-istanbul_morning=I bought some spices as well. Saffron, mastic, cardamom. One little bag and the whole Laika smells like a laboratory.
-istanbul_morning=The data's collected. It needs to be processed at home, in proper conditions.
-istanbul_morning=Right, let's head back. Open the [b]Map[/b] and choose the return route.
+istanbul_morning=Morning. While we're still in Istanbul, there's something I want to ask you.
+istanbul_morning=How would you test Çelebi's wings before you jumped off Galata Tower?
+istanbul_morning=I'd start with a little model. Let it fly across the Bosphorus ten times.
+istanbul_morning=Then I'd have to put the wings on myself. I suspect that's when I'd think of an eleventh test.
+istanbul_morning=I'm like that with running. I know so much about my own legs that sometimes I'm scared to go to the starting line.
+istanbul_morning=I'd like to get back on the track when we get home. Would you time me?
+istanbul_morning=For now, open the [b]Map[/b]. Let's switch directions and head home.
 
-back_6=Goodbye, Istanbul. I'll be back here with a new hypothesis.
-back_6=The Bosphorus bridge in the mirror. The structure holds its weight perfectly. Recording this.
+back_6=Next time I'd like to come to Istanbul with a drawing of Çelebi's wings.
+back_6=Though first I'd have to find out whether any drawings even survive.
 
-back_6_2=Saw what they use for tea here? Cups with handles. Super handy for holding hot drinks.
-back_6_2=I drank it with five sugar cubes. The seller watched with respect. Or maybe worry.
+back_6_2=You know those Turkish tea glasses with the narrow waists? I like being able to see how much sugar's left at the bottom.
+back_6_2=I reckon my five lumps would fit. How much room would that leave for the tea?
 
-back_6_3=The spice packet's on my lap. Avoid potholes, assistant.
-back_6_3=If the saffron spills all over the car, the Laika'll be yellow inside. Forever.
+back_6_3=Assistant, would you help me test a pair of wings if I made some for myself?
+back_6_3=I meant hold them up in the wind. If anyone has to jump, it'll be me.
 
-back_5=I measured everything on the way there. Speed, wear, your pulse.
-back_5=And now I'm just watching the mountains. Seems the brain needs that too to function.
+back_5=I wonder which roads tire you out more. Bends take more work, but you're less likely to nod off.
+back_5=Tell me if you notice a difference. I can't tell from the passenger seat.
 
-back_5_2=Bulgaria is famous for yogurt. Special bacteria. Want to get a sample.
-back_5_2=Don't look like that. It's science. And it's tasty with honey too.
+back_5_2=Bulgaria's famous for its yoghurt. It's the bacteria. I'd like a sample.
+back_5_2=I'd divide the yoghurt in half. A spoonful of honey in one half, and I'd save the other for a starter.
 
-back_5_3=You know, when an idea hits me, my hair stands on end.
-back_5_3=It's standing now. No, I won't say what the idea is. Ku-ku-ku...
+back_5_3=Don't worry if I go quiet for a while. Usually I'm working my way through some interesting idea.
+back_5_3=Sometimes I just feel like being quiet. I think this might be one of those times.
 
-back_4=We need to come up with a name for that Istanbul spice mixture. “Tachyon Bosporus”? “Formula 601”?
-back_4=You can suggest your own. But I'll still be the one to choose.
+back_4=I'd like to come up with a travel sickness remedy that doesn't put me to sleep.
+back_4=I'd have to try it on myself first. You're driving. It wouldn't do for you to nod off.
 
-back_4_2=Sea again. Beautiful. You know how far it is if we run along the shore? I counted.
-back_4_2=My legs couldn't handle that distance. But with you and the Laika 601 Deluxe, we made it.
+back_4_2=I always wonder how far I could run on a road like this. To the first bend? The second?
+back_4_2=By the second I'm usually promising myself I'll make it to the third. It's that habit I'd like to understand.
 
-back_4_3=Kafe must have noticed I'm not here by now. She always notices everything.
-back_4_3=I'll bring her coffee from the market. Then maybe she'll forgive me.
+back_4_3=I wonder what Café will ask me first about our trip.
+back_4_3=I'd ask how the drive went. She'll probably ask if I got enough sleep.
 
-back_3=The bridge in Sturovo still hasn't been fixed. Shame.
-back_3=Though a missing bridge is also a great motivator. Someone will build it someday.
+back_3=We'll be heading towards Štúrovo again. There was a bridge over the Danube there. I wonder how many people it took to build it.
+back_3=The books usually name the engineer. I'd like to talk to whoever fastened that first beam out over the water.
 
-back_3_2=In Hungary, they invented a cake called “Dobos”. Lots of layers, with a caramel top.
-back_3_2=Assistant, that's a high-calorie research subject. I want to study it. Not right now. I can wait.
+back_3_2=Dobos torte comes from Hungary. Layers and layers of cake, with a crisp caramel lid.
+back_3_2=I'd start with the caramel. Though how do I get it off and still get my share of the layers underneath?
 
-back_3_3=I've rechecked the data. Your driving skills have improved significantly.
-back_3_3=So my potions are working. Or maybe you've just gotten better at driving. I lean towards the first option.
+back_3_3=Have you got a better feel for the car now than when we set off?
+back_3_3=If so, I wonder what you got used to first. I can watch you from this seat all I like, but only you can tell me that.
 
-back_2=Germany's almost here. I miss the lab. And my teapot.
-back_2=Hm. Missed it. Odd feeling. Need to note that down.
+back_2=Germany soon. I miss my lab. And my kettle.
+back_2=When I get back, I'll put the kettle on and get to work. Actually, I'd better stay away from my desk until it boils.
 
-back_2_2=Prague's somewhere nearby. Legend has it a rabbi molded a giant from clay and brought it to life. A golem.
-back_2_2=Creating life from nothing... Strong hypothesis. I doubt I'll test it.
+back_2_2=There's a Prague legend about a giant made of clay. The Golem. There's one little detail that intrigues me.
+back_2_2=How did his knees bend? Mine would crack on the first step if I made them out of clay.
 
-back_2_3=Assistant, will they inspect us at the border? Spices aren't illegal, are they?
-back_2_3=If they ask, I'll say it's for research. Sounds serious and scares everyone.
+back_2_3=At border crossings I always wonder how I'd explain why a scientist needs test tubes on the road.
+back_2_3=Perhaps I'd better just answer whatever they actually ask me.
 
-back_1=Last day on the road. Strangely, I don't want the experiment to end.
-back_1=I'll write a report when I get home. Long one. You'll be a co-author.
-back_1=Don't get your hopes up. Co-authors take meds too.
+back_1=Berlin soon. I'd better get all this down while I still remember what I wanted to ask you.
+back_1=I'll write a report when we get home. A long one. You'll be my co-author.
+back_1=I've never had a co-author come with the car before.
 
-back_1_2=So many Trabants here. Two-stroke, like our Laika. Smoke like my flasks.
-back_1_2=Almost relatives. Good we didn't abandon her.
+back_1_2=The Trabant's got a two-stroke engine too. I wonder if I could pick out my Laika by ear.
+back_1_2=Just don't test me while we're moving. I'd like to hear both cars in the yard first.
 
-back_1_3=What'll I do first when I get home? The meds. No, tea first. No, meds first...
-back_1_3=Right, I'll decide at the door. You heard nothing.
+back_1_3=First thing I'll do at home is put the kettle on. I know myself. If I sit down with my notes, I'll forget all about the tea.
+back_1_3=If you stay and keep me company, though, the tea might stand a chance.
 
-turn_start=Huh? Going back? Well... Honestly, it's a shame. I wanted to see it through.
-turn_start=Better to call off an experiment early than to have it blow up.
-turn_start=We already have the data. We'll process it, fix the errors and try again.
-turn_start=We'll try again. Reproducibility, my dear assistant.
+turn_start=We're heading home? What a shame. I really did want to get to Galata Tower.
+turn_start=Funny. I wanted so badly to know how Çelebi got up the nerve to jump. As if he'd be waiting at the top to tell me.
+turn_start=I'd still like to make it to Istanbul another time. With you, if you'll have me.
+turn_start=For now, show me which way we're going back.
 
-home_5=The woods around here are thick. There must be some interesting mushrooms. For research, not eating.
-home_5=No, we're not stopping. I'm holding back. That's part of the experiment too.
+home_5=I'd love to stop in Bulgaria for a whole day sometime. Put me in a wood and I want to look under the very first stump.
+home_5=You'd have to tell me beforehand when we were leaving. By the second stump it wouldn't occur to me to check the time.
 
-home_5_2=Bulgarian yogurt is famous for its bacteria. Add honey on top and it's almost a dessert.
-home_5_2=Next time we'll bring a jar. And honey. For research.
+home_5_2=When I get home, I'll try culturing milk with Bulgarian yoghurt. I wonder how a batch made with my own starter would taste.
+home_5_2=Assuming I don't eat all my starter with honey while the milk's warming up.
 
-home_5_3=They say Bulgarians nod the other way round. Shaking your head means “yes”, nodding means “no”.
-home_5_3=Interesting reversal of reflexes. You'd get confused. I've already retrained myself. Almost.
+home_5_3=Funny how tempting it is to give the driver advice.
+home_5_3=If it were me at the wheel, I'd have kicked my adviser out by the third suggestion.
 
-home_4=It's beautiful here. Even if we didn't make it, I'm glad we drove here.
-home_4=A negative result's still a result. Good scientists know that.
+home_4=We didn't get to Istanbul, but I'll still have plenty to tell them at home.
+home_4=It's a shame about the tower. I'd happily spend a couple of hours at its foot just looking up.
 
-home_4_2=Dubrovnik behind a stone wall. An entire city, and the wall's held up for centuries.
-home_4_2=What strong construction. I wish I had those kind of joints in my legs.
+home_4_2=If we ever get back to Dubrovnik, I'd like to walk the city walls.
+home_4_2=I'd have to forbid myself to run. I'd hate to turn an ankle on the very first flight of steps.
 
-home_4_3=If one of our tyres goes flat, I'll calculate while you operate the jack. Division of labour.
-home_4_3=Alright, it won't go flat. I've worked out the odds. Low. Almost.
+home_4_3=If a tyre goes flat, remind me to stand back while you get the jack in place.
+home_4_3=Otherwise I'm afraid I'd go poking about underneath before you'd even got the car off the ground.
 
-home_3=Last year, thousands left East Germany via Hungary. They opened the border here.
-home_3=One open door and a chain reaction started.
+home_3=Hungary opened its border last year. Thousands left East Germany that way.
+home_3=I wonder when you decide to leave home if you don't even know they'll let you through.
 
-home_3_2=They dry peppers in bunches right on the walls. Capsaicin. Interesting stuff, but bitter.
-home_3_2=I don't like bitter things. Drive around such houses. I'm not looking away, I'm just looking the other way.
+home_3_2=I keep thinking about Hungarian paprika. One kind's sweet, another's hot, and the powders look exactly alike.
+home_3_2=I'd be a hopeless kitchen assistant. I'd want to taste both jars.
 
-home_3_3=Working on a new potion. Wait... sugar, caffeine, and a bit of that glowing stuff...
-home_3_3=Not working yet. No worries, I'll fine-tune it. You get to try it first.
+home_3_3=I'd like to make you something for drowsiness. Every time I start on the formula, I come back to caffeine.
+home_3_3=At this rate I'll end up prescribing a cup of coffee. At least you know what that does.
 
-home_2=I heard they made a cartoon about a mole in Czechoslovakia. Kids watch it all over the world.
-home_2=A mole who fixes everything. Almost like you. Just not as fluffy.
+home_2=Remember that Czech cartoon about the mole? He had a car of his own.
+home_2=I ought to show that cartoon whenever I explain how an engine works. It's much easier with pictures.
 
-home_2_2=They argued in Czechoslovakia for ages about whether to use a hyphen in the country name.
-home_2_2=Over a single dash. Like two scientists arguing over a comma in a formula. I understand them.
+home_2_2=They spent ages arguing about whether the name of Czechoslovakia should have a hyphen.
+home_2_2=And I complain about naming one little potion. I could change its name tomorrow if I felt like it.
 
-home_2_3=Aren't you tired? That's not caring. Just a tired driver ruins the data.
-home_2_3=Want a boost potion? No? Well, fine. The side effects would still be interesting.
+home_2_3=Getting tired? I can keep quiet for a bit if all this talk is distracting you.
+home_2_3=Just say so. I can't tell what it's like at the wheel from where I'm sitting.
 
-home_1=Dresden's behind us, Berlin's ahead. Right on our doorstep.
-home_1=Lab, tea, cake. Don't rush. No, rush!
+home_1=Dresden behind us, Berlin up ahead. Nearly there.
+home_1=First thing I'll do when we get back is sit at my desk. That's what I miss. At a desk I don't have to catch my pen between my knees.
 
-home_1_2=I'll start a new series of experiments back home. Based on what we've seen.
-home_1_2=And you, don't relax: the next drive's still yours. Guinea pigs don't go on holiday.
+home_1_2=Next time I'd start with a shorter drive. I'd like to see how long it takes for my legs to go stiff.
+home_1_2=I'll have to keep track of the time myself. The driver has enough to do already.
 
-home_1_3=Well done, you delivered it. Not that I'm grateful. Just good results.
-home_1_3=We rest tomorrow. The day after, I'll decide what to measure next.
+home_1_3=Thanks for taking me along. Left to myself, I'd have stayed in the lab.
+home_1_3=Next time you feel like a drive and I'm buried in work, just pull me away by the sleeve.
 
-doze_fall=I'll just... close my eyes... to rest my eyesight...
-doze_fall=Blood sugar's dropping... Wake me up at the motel.
+doze_fall=My eyes are closing. I'm still listening…
+doze_fall=Wake me at the motel, will you?
 
 doze_mumble=The speed of light... not the limit... mmm...
 doze_mumble=Guinea pig... drink... it's not dangerous...
-doze_mumble=Another... bit of sugar...
+doze_mumble=One more… lump of sugar…
 
 doze_pat=Mmm... kukuku...
 
-doze_wake_bump=Huh?! I wasn't sleeping. I was pondering a hypothesis with my eyes closed.
+doze_wake_bump=What? I suppose I did doze off after all.
 doze_wake_bump=What? Where are we? How long was I out?
 
-doze_wake_crash=Ouch! What was that? Are the flasks intact?!
+doze_wake_crash=Ow! What was that? Are my flasks all right?!
 
-doze_wake_thunder=Thunder?! The discharge was close...
+doze_wake_thunder=Thunder?! That sounded close…
 
-doze_wake_stop=Are we there already? You drove well. No unnecessary bumps. I'll note that.
+doze_wake_stop=Have we stopped? Give me a second. I'm not quite awake yet.
 
-wake_wait=I'll wait in the car. If you fall asleep again, I'll wake you with a drug.
+wake_wait=I'll wait in the car. Fall asleep again and I'll have to give you something to wake you up.
 
-wake_alarm=Good morning. Give me your hand. Let's start the day with a blood test. I'm joking. Almost.
-wake_alarm=Up! I'm already up, and that's almost a miracle for me.
-wake_alarm=Get up. I worked all night yet still woke up before you.
-wake_alarm=Up, up! The road's waiting, and the data's waiting too.
-wake_alarm=Wake up, guinea pig. Your pulse is steady, but we need to go.
-wake_crash=Wake up. After yesterday's shock, I checked you while you slept. You'll live. Just don't break the car.
+wake_alarm=Morning. Hold still. I'm testing which word will make you open your eyes. Breakfast?
+wake_alarm=Up you get! I'm already up, which is practically a miracle.
+wake_alarm=Time to get up. It's not often I'm the one saying that to you.
+wake_alarm=It's morning. I'd happily go back to sleep, but who'd do the driving?
+wake_alarm=Time to get up, guinea pig. There's something I still want to ask you.
+wake_crash=Morning. How are you feeling after that crash yesterday? If your head hurts, tell me before you get behind the wheel.

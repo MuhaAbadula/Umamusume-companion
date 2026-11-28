@@ -1,0 +1,7 @@
+name=Сайленс Судзука
+name_en=Silence Suzuka
+name_acc=Сайленс Судзуку
+height_m=1.61
+body_scale=1.04
+voice_pitch=1.0
+features=seated_tail,souvenirs

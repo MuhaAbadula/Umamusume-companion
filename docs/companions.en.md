@@ -2,7 +2,7 @@
 
 English · [Русский](companions.md)
 
-The mod includes Agnes Tachyon, Matikanefukukitaru, Narita Taishin, Nice Nature, Sweep Tosho, and Oguri Cap. Each companion’s dialogue is in her folder under `models/`.
+The mod includes Agnes Tachyon, Matikanefukukitaru, Narita Taishin, Nice Nature, Sweep Tosho, Oguri Cap, Special Week, and Silence Suzuka. Each companion’s dialogue is in her folder under `models/`.
 
 ## Nice Nature
 
@@ -56,10 +56,20 @@ Food often reminds her of a particular person. She remembers Tama teaching her t
 
 In the mod’s story, there was always a meal waiting for Oguri after a race in Kasamatsu. Next time, she wants to cook for the people who cheered her on. Everyone at home already knows all her dishes. When she hears how many towns the driver will pass through, she asks to come along. She wants to bring back one new dish she can cook for everyone in a single big pot.
 
-At the garage she offers to help with the car in exchange for a seat. On the road she takes notes on what makes a good meal after a long day. In Istanbul she writes down how to make lentil soup and invites the driver to join everyone at the table. If you turn back early, she settles on a dish she can make with ingredients already at home. This story unfolds in conversation during the trip.
+At the garage she offers to help with the car in exchange for a seat. On the road she takes notes on what makes a good meal after a long day. In Istanbul she decides to make lentil soup at home and invites the driver to join everyone at the table. If you turn back early, she settles on a dish she can make with ingredients already at home. This story unfolds in conversation during the trip.
 
 ### A snack from the trunk
 
 Put a loose pack of sausages in the Laika’s trunk. After a minute of driving, stop and look over at the passenger seat. Oguri lifts a sausage to her mouth, chews, and only then admits what she’s done. One pack disappears from the trunk. She needs at least another minute on the road before her next snack. She leaves sealed crates alone.
 
 After she eats, her belly gradually rounds out under her uniform. The effect lasts 45 seconds of game time and fades over the last three. Her outfit uses the difference between two Uma Musume models of the winter school uniform, the regular version and the **Slow Metabolism** variant (`dress_data` IDs 5 and 14).
+
+## Special Week
+
+When Spe sends her mother a photo of her racewear, her mother calls in tears. Spe tells that story with a laugh. On the drive she rehearses what she wants to tell her mother on tape. She forgets Dresden when she tries to list the towns, but remembers exactly where the passenger door was in the garage. Even if the driver turns back early, she has a story to take home. Her Japanese voice is Azumi Waki. See character 1001, home lines 91001, 91004, 91008 and 91016. [Cygames profile](https://umamusume.jp/character/specialweek)
+
+## Silence Suzuka
+
+Suzuka misses the open fields of her childhood. She likes the view ahead of the pack and can still see places she ran when she closes her eyes at night. In her character story (episodes 1–4), she tries holding back, then asks the trainer to come with her when she explains why she wants to lead from the start. Her Japanese voice is Marika Kono. See character 1002, voice lines 91001, 91007 and 91011. [Cygames profile](https://umamusume.jp/character/silencesuzuka) · [Main Story, chapter 5](https://umamusume.jp/contents/game/mainstory/part1/)
+
+In Jalopy she asks for a ride to Istanbul. On a training run she always has to turn back. This driver will get up tomorrow and keep going, and she wants to see where the road leads. She asks the driver to point out anything worth seeing on the left. By Istanbul, waiting for the key to turn feels familiar: she leans forward the same way just before a race. If the driver turns back early, she still wants to be first out on the track when she gets home.
