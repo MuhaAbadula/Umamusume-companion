@@ -10,10 +10,10 @@
 ## Установка
 
 1. Если JaLoader ещё не установлен, [установите его](https://github.com/theLeaxx/JaLoader/wiki/Installing-JaLoader-via-JaPatcher) и один раз запустите игру.
-2. Закройте Jalopy и запустите [установщик мода для Windows](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.6/Umamusume-companion-0.55.6-Windows.exe).
+2. Закройте Jalopy и запустите [установщик мода для Windows](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.7/Umamusume-companion-0.55.7-Windows.exe).
 3. В главном меню нажмите **Спутница**, выберите героиню и начните или продолжите поездку.
 
-Для ручной установки распакуйте [ZIP](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.6/Umamusume-companion-0.55.6.zip) в папку с `Jalopy.exe`.
+Для ручной установки распакуйте [ZIP](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.7/Umamusume-companion-0.55.7.zip) в папку с `Jalopy.exe`.
 
 Чтобы дать команду, зажмите **V**, наведите курсор на команду и отпустите клавишу.
 

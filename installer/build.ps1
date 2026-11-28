@@ -1,4 +1,4 @@
-param([string]$Version = "0.55.6")
+param([string]$Version = "0.55.7")
 $ErrorActionPreference = "Stop"
 $dist = Join-Path (Split-Path $PSScriptRoot) "dist"
 $zip = Join-Path $dist "Umamusume-companion-$Version.zip"

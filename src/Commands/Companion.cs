@@ -98,6 +98,7 @@ namespace UmamusumeCompanion
                 case "Outing: not now, asleep.": return GameText.Choose("She's asleep", "Ума спит");
                 case "Fetching the nearest roadside crate.": return GameText.Choose("She's heading for the crate", "Ума идёт за ящиком");
                 case "No roadside crate nearby.": return GameText.Choose("No crate within 15 m of the car", "В радиусе 15 м от машины нет ящика");
+                case "Roadside crate out of range.": return GameText.Choose("Drive within 15 m of the crate", "Подъедь к ящику на 15 м или ближе");
                 case "Boot lid unavailable.": return GameText.Choose("The boot is unavailable", "Багажник недоступен");
                 case "Stop with the passenger door clear first.":
                     return GameText.Choose("Stop the car with the passenger door clear", "Останови машину и освободи пассажирскую дверь");

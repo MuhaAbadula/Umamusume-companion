@@ -10,10 +10,10 @@ Pick an Umamusume character to ride in the Laika’s passenger seat in place of 
 ## Installation
 
 1. If you haven’t already installed JaLoader, follow the [JaLoader installation guide](https://github.com/theLeaxx/JaLoader/wiki/Installing-JaLoader-via-JaPatcher) and launch Jalopy once.
-2. Close Jalopy and run the [Windows mod installer](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.6/Umamusume-companion-0.55.6-Windows.exe).
+2. Close Jalopy and run the [Windows mod installer](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.7/Umamusume-companion-0.55.7-Windows.exe).
 3. Select **Companion** in the main menu, choose your companion, then start or continue your trip.
 
-To install manually, extract the [ZIP](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.6/Umamusume-companion-0.55.6.zip) into the folder containing `Jalopy.exe`.
+To install manually, extract the [ZIP](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.7/Umamusume-companion-0.55.7.zip) into the folder containing `Jalopy.exe`.
 
 English dialogue, command prompts, and radio news are available from version 0.55.5. Select English in Jalopy's language settings. To give your companion a command, hold **V**, point at the command you want, then release the key.
 
@@ -44,10 +44,10 @@ The models, characters, and voices belong to Cygames.
 ## Установка
 
 1. Если JaLoader ещё не установлен, [установите его](https://github.com/theLeaxx/JaLoader/wiki/Installing-JaLoader-via-JaPatcher) и один раз запустите игру.
-2. Закройте Jalopy и запустите [установщик мода для Windows](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.6/Umamusume-companion-0.55.6-Windows.exe).
+2. Закройте Jalopy и запустите [установщик мода для Windows](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.7/Umamusume-companion-0.55.7-Windows.exe).
 3. В главном меню нажмите **Спутница**, выберите героиню и начните или продолжите поездку.
 
-Для ручной установки распакуйте [ZIP](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.6/Umamusume-companion-0.55.6.zip) в папку с `Jalopy.exe`.
+Для ручной установки распакуйте [ZIP](https://github.com/MuhaAbadula/Jalopy-umamusume-companion/releases/download/v0.55.7/Umamusume-companion-0.55.7.zip) в папку с `Jalopy.exe`.
 
 Чтобы дать команду, зажмите **V**, наведите курсор на команду и отпустите клавишу.
 
